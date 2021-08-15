@@ -11,3 +11,4 @@ export const SIGN_OUT_SUCCESS = 'SIGN_OUT_SUCCESS';
 export const SIGN_OUT_FAILURE = 'SIGN_OUT_FAILURE';
 
 export const AUTH = 'AUTH_SUCCESS';
+export const AUTH_REQUEST = 'AUTH_REQUEST';

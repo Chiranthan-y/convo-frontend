@@ -1,18 +1,16 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import ChatList from '../../Components/ChatList';
 
-const ChatlistScreen = () => {
+const ChatlistScreen = ({navigation}) => {
   return (
-    <View>
-      <Text>ChatlistScreen</Text>
-      <ChatList />
-      <ChatList />
-      <ChatList />
-      <ChatList />
-    </View>
+    <ScrollView>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Chat', {name: 'v'})}>
+        <ChatList username={'username'} profilepic={''} />
+      </TouchableOpacity>
+    </ScrollView>
   );
 };
 
 export default ChatlistScreen;
-

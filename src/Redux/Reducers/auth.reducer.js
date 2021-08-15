@@ -10,31 +10,8 @@ import {
   SIGN_OUT_REQUEST,
   SIGN_OUT_SUCCESS,
   AUTH,
+  AUTH_REQUEST,
 } from './../Actions/action.types';
-
-
-
-
-const userdata = null;
-getData().then(res => {
-  const userdata = res;
-  userdata = userdata;
-});
-
-console.log(userdata);
-/*
-export const getData = async () => {
-  try {
-    const data = await AsyncStorage.getItem('@userDATA');
-    return data != null ? JSON.parse(data) : null;
-  } catch (error) {
-    return null;
-  }
-};
-*/
-
-//! get the data from localstorrage and add it the currentUser and token if exist
-//! getData () will return promise so HOW CAN I GET THE DATA OUT AND INITIALIZE TO THE  VARIABLES
 
 const initState = {
   currentUser: null,
@@ -49,6 +26,7 @@ const authReducer = (state = initState, action) => {
     case SIGN_IN_REQUEST:
     case SIGN_UP_REQUEST:
     case SIGN_OUT_REQUEST:
+    case AUTH_REQUEST:
       return {
         ...state,
         loading: true,
