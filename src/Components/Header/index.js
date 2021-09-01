@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {Avatar} from 'react-native-elements';
 
 import styles from './style';
-const Header = () => {
+const Header = ({navigation}) => {
   return (
     <View style={styles.headerView}>
       <View>

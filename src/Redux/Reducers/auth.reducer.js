@@ -11,6 +11,7 @@ import {
   SIGN_OUT_SUCCESS,
   AUTH,
   AUTH_REQUEST,
+  AUTH_FAIL,
 } from './../Actions/action.types';
 
 const initState = {
@@ -53,7 +54,8 @@ const authReducer = (state = initState, action) => {
         currentUser: action.payload.user,
         isAuthenticated: true,
       };
-    case SIGN_OUT_SUCCESS: {
+    case SIGN_OUT_SUCCESS:
+    case AUTH_FAIL: {
       return {
         ...state,
         isAuthenticated: false,

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 
 import {getData} from './Utils/storage';
-import {AUTH, AUTH_REQUEST} from './Redux/Actions/action.types';
+import {AUTH, AUTH_REQUEST, AUTH_FAIL} from './Redux/Actions/action.types';
 
 import HomeStack from './Stack/HomeStack';
 import AuthStack from './Stack/AuthStack';
@@ -15,10 +15,13 @@ const Main = () => {
   useEffect(() => {
     const getuser = () => {
       getData().then(res => {
-        dispatch({type: AUTH_REQUEST});
         const {user, token} = res;
+        dispatch({type: AUTH_REQUEST});
+        console.log('RESponce', res);
         if (user && token) {
           dispatch({type: AUTH, payload: {user, token}});
+        } else {
+          dispatch({type: AUTH_FAIL});
         }
       });
     };

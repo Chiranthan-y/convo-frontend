@@ -19,7 +19,7 @@ const HomeStack = () => {
           title: route.params.name,
           headerTitleStyle: {padding: 10},
           headerLeft: () => {
-            return <Header />;
+            return <Header navigation={navigation} />;
           },
         })}
       />
